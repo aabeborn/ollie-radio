@@ -1,4 +1,7 @@
+import tailwind from 'prettier-plugin-tailwindcss'
+
 export default {
+	plugins: [tailwind],
 	arrowParens: 'avoid',
 	bracketSameLine: false,
 	bracketSpacing: true,
