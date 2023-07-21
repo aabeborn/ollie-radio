@@ -10,8 +10,10 @@ const baseConfig = {
 	},
 	env: {
 		node: true,
-		browser: true
-	}
+		browser: true,
+		es2024: true
+	},
+	overrides: []
 }
 
 const isTurbo = existsSync(resolve(cwd(), 'turbo.json'))
@@ -19,12 +21,15 @@ if (isTurbo) baseConfig.extends.push('turbo')
 
 const isTypescript = existsSync(resolve(cwd(), 'tsconfig.json'))
 if (isTypescript) {
-	baseConfig.extends.push(
-		'plugin:@typescript-eslint/strict-type-check',
-		'plugin:@typescript-eslint/stylistic-type-check'
-	)
-	baseConfig.plugins.push('@typescript-eslint')
-	baseConfig.parser = '@typescript-eslint/parser'
+	baseConfig.overrides.push({
+		files: ['*.ts', '*.tsx'],
+		extends: [
+			'plugin:@typescript-eslint/recommended',
+			'plugin:@typescript-eslint/stylistic'
+		],
+		plugins: ['@typescript-eslint'],
+		parser: '@typescript-eslint/parser'
+	})
 }
 
 const isNext = existsSync(resolve(cwd(), 'next.config.js'))
