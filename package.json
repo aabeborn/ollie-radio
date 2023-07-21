@@ -6,13 +6,16 @@
 		"build": "turbo run build",
 		"dev": "turbo run dev",
 		"lint": "turbo run lint",
-		"format": "prettier --write . --ignore-path .gitignore"
+		"format": "prettier --write . --ignore-path .gitignore",
+		"prepare": "husky install"
 	},
 	"devDependencies": {
 		"@aabeborn/code-style": "*",
 		"@changesets/cli": "^2.26.2",
 		"@turbo/gen": "^1.10.9",
 		"eslint": "^8.45.0",
+		"husky": "^8.0.3",
+		"lint-staged": "^13.2.3",
 		"prettier": "^3.0.0",
 		"turbo": "^1.10.9"
 	},
