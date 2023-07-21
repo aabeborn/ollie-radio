@@ -1,13 +1,13 @@
 {
 	"name": "@aabeborn/code-style",
 	"version": "0.0.0",
-	"description": "",
+	"description": "Code style for aabeborn projects",
 	"private": false,
 	"publishConfig": {
 		"access": "public"
 	},
 	"files": [
-		"eslint.js",
+		"eslint.cjs",
 		"prettier.js",
 		"package.json"
 	],
