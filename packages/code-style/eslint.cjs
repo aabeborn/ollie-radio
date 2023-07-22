@@ -33,7 +33,15 @@ if (isTypescript) {
 }
 
 const isNext = existsSync(resolve(cwd(), 'next.config.js'))
-if (isNext) baseConfig.extends.push('next')
+if (isNext) {
+	baseConfig.extends.push(
+		'plugin:react/recommended',
+		'plugin:react-hooks/recommended',
+		'plugin:@next/next/recommended',
+		'plugin:jsx-a11y/recommended'
+	)
+	baseConfig.plugins.push('react', 'react-hooks', '@next/next', 'jsx-a11y')
+}
 
 baseConfig.extends.push('plugin:import/recommended', 'prettier')
 
